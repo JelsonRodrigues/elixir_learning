@@ -1,21 +1,10 @@
 # ElixirLearning
 
-**TODO: Add description**
+Este repositório contém os códigos desenvolvidos durante o aprendizado da linguagem Elixir. Desenvolvido na cadeira TEC V.
 
-## Installation
+# Test
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `elixir_learning` to your list of dependencies in `mix.exs`:
-
-```elixir
-def deps do
-  [
-    {:elixir_learning, "~> 0.1.0"}
-  ]
-end
+Para testar é só utilizar o **mix**, e rodar o comando 
+```bash
+mix test
 ```
-
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/elixir_learning](https://hexdocs.pm/elixir_learning).
-
