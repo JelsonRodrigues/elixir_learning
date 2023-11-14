@@ -47,7 +47,28 @@ defmodule Lista3Test do
     assert Lista3.join([1], [2]) == [1, 2]
     assert Lista3.join([2], []) == [2]
     assert Lista3.join([], [2, 3]) == [2, 3]
+    assert Lista3.join([2, 3], [2]) == [2, 3, 2]
+    assert Lista3.join([2], [3, 2]) == [2, 3, 2]
+    assert Lista3.join(["a", "b", "c", "d"], ["a", "b", "c", "d"]) == ["a", "b", "c", "d", "a", "b", "c", "d"]
   end
+
+  test "concat_lista" do
+    assert Lista3.concat_lista([]) == []
+    assert Lista3.concat_lista([[], []]) == []
+    assert Lista3.concat_lista([[1, 2], [3]]) == [1,2,3]
+    assert Lista3.concat_lista([[1, 2], [3], [[4, 5], 6]]) == [1, 2, 3, [4, 5], 6]
+    assert Lista3.concat_lista([[], [1, 2]]) == [1, 2]
+    assert Lista3.concat_lista([[1,2, true], []]) == [1, 2, true]
+  end
+
+  test "inverte_lista" do
+    assert Lista3.inverte_lista([]) == []
+    assert Lista3.inverte_lista([1]) == [1]
+    assert Lista3.inverte_lista([1,2]) == [2,1]
+    assert Lista3.inverte_lista([1,2,3]) == [3,2,1]
+    assert Lista3.inverte_lista([[1],2,3]) == [3,2,[1]]
+  end
+
 end
 
 defmodule ExemplosTest do
