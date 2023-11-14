@@ -31,9 +31,13 @@ defmodule Lista3 do
   def neg_lista([h | t]), do: [not h | Lista3.neg_lista(t)]
 
   def join([], []), do: []
-  def join([], [t]), do: [t]
-  def join([t], []), do: [t]
-  def join([h|t], []), do: [h|t]
-  def join([h], [h2 | t]), do: [h | [h2 | t]]
+  def join([], [h|t]), do: [h | t]
+  def join([h|t], []), do: [h | t]
   def join([h | t], [h2 | t2]), do: [h | Lista3.join(t, [h2 | t2])]
+
+  def concat_lista([]), do: []
+  def concat_lista([h | t]), do: Lista3.join(h, Lista3.concat_lista(t))
+
+  def inverte_lista([]), do: []
+  def inverte_lista([h | t]), do: Lista3.join(Lista3.inverte_lista(t), [h])
 end
