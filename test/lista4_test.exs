@@ -36,6 +36,13 @@ defmodule Lista4Test do
     assert Lista4.unicos([1,2,2]) == [1,2]
     assert Lista4.unicos([1,1,1,3,2,1]) == [3,2,1]
   end
+
+  test "quick_sort" do
+    assert Lista4.quick_sort([]) == []
+    assert Lista4.quick_sort([1]) == [1]
+    assert Lista4.quick_sort([4,1,6,2]) == [1,2,4,6]
+    assert Lista4.quick_sort([4,2,1,6,2]) == [1,2,2,4,6]
+  end
 end
 
 
