@@ -59,4 +59,21 @@ defmodule Lista4 do
       true -> [h | unicos(t)]
     end
   end
+
+  # Versão usando lambda e a função filter
+  # def menores(_, []), do: []
+  # def menores(n, [h|t]), do: [h|t] |> Enum.filter(&(&1 <= n))
+  # def maiores(_, []), do: []
+  # def maiores(n, [h|t]), do: [h|t] |> Enum.filter(&(&1 > n))
+
+  def menores(_, []), do: []
+  def menores(n, [h|t]) when n >= h, do: [h|menores(n, t)]
+  def menores(n, [h|t]) when n < h, do: menores(n, t)
+
+  def maiores(_, []), do: []
+  def maiores(n, [h|t]) when n < h, do: [h|maiores(n,t)]
+  def maiores(n, [h|t]) when n >= h, do: maiores(n,t)
+
+  def quick_sort([]), do: []
+  def quick_sort([h|t]), do: quick_sort(menores(h,t)) ++ [h] ++ quick_sort(maiores(h,t))
 end
