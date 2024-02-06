@@ -4,7 +4,7 @@ defmodule Basics do
   end
 
   def soma(a, b) do
-    a+b
+    a + b
   end
 
   def menor(a, b) do
@@ -48,10 +48,10 @@ defmodule Basics do
   def menor1(x, y) when x <= y do
     x
   end
+
   def menor1(x, y) when y <= x do
     y
   end
 
   def tres_iguais?(x, y, z), do: x == y && x == z
-
 end

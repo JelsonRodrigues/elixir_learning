@@ -29,8 +29,8 @@ defmodule Lista1 do
 
   def verifica_triangulo?(a, b, c) do
     a + b > c &&
-    a + c > b &&
-    c + b > a
+      a + c > b &&
+      c + b > a
   end
 
   def sinal(numero) do
@@ -48,5 +48,4 @@ defmodule Lista1 do
   end
 
   def menor_tres(a, b, c), do: Lista1.menor(Lista1.menor(a, b), c)
-
 end
