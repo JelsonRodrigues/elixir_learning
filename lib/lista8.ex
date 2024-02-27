@@ -47,8 +47,28 @@ defmodule Lista8 do
     end
   end
 
-  def print_nomes(n) when n > 0 do
-
+  def ordena_nomes(n) when n > 0 do
+    nomes = quick_sort(ler_nome_caller(n))
+    mostra_nomes(nomes)
   end
 
+  def mostra_nomes([]), do: IO.puts("Fim!")
+  def mostra_nomes([h|t]) do
+    IO.puts(h)
+    mostra_nomes(t)
+  end
+
+  def ler_nome_caller(n) when n > 0, do: ler_nome(n, 1)
+  def ler_nome(n, _index) when n==0, do: []
+  def ler_nome(n, index) when n>0 do
+    nome = IO.gets("Nome #{index}: ") |> String.trim
+    [nome | Lista8.ler_nome(n-1, index + 1)]
+  end
+
+  def quick_sort([]), do: []
+  def quick_sort([h|t]) do
+    maiores = Enum.filter(t, fn x -> x > h end)
+    menores = Enum.filter(t, fn x -> x < h end)
+    quick_sort(menores) ++ [h] ++ quick_sort(maiores)
+  end
 end
